@@ -23,11 +23,10 @@ const Box = styled.div`
     margin-bottom: 20px;
   }
   .smallTitle {
-    margin-bottom: 20px;
     font-size: 16px;
     font-weight: 700;
     color: #333333;
-    margin-bottom: 20px;
+    margin-bottom: ${props => props.theme.marginBottom};
   }
   hr {
     margin-top: 12px;
@@ -55,6 +54,19 @@ const Box = styled.div`
     border-radius: 10000px;
     background-color: #6F92BB;
   }
+  .atencaoValidacao {
+      font-size: 12px;
+      color:red;
+      font-weight: bold;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 20px;
+  }
 `;
+
+
+export const BoxTheme = {
+  marginBottom: "20px",
+};
 
 export default Box;
