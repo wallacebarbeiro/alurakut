@@ -5,7 +5,7 @@ import nookies from 'nookies';
 
 export default function LoginScreen() {
   const router = useRouter();
-  const [githubUser, setGithubUser] = React.useState('omariosouto');
+  const [githubUser, setGithubUser] = React.useState('wallacebarbeiro');
 
   return (
     <main style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -31,7 +31,9 @@ export default function LoginScreen() {
                     body: JSON.stringify({ githubUser: githubUser })
                 })
                 .then(async (respostaDoServer) => {
+                  
                     const dadosDaResposta = await respostaDoServer.json()
+                    console.log(dadosDaResposta)
                     const token = dadosDaResposta.token;
                     nookies.set(null, 'USER_TOKEN', token, {
                         path: '/',
