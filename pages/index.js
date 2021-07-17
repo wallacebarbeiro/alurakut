@@ -163,7 +163,9 @@ export async function getServerSideProps(context) {
   //     }
   // })
   // .then((resposta) => resposta.json())
+
   const { githubUser } = jwt.decode(token);
+
   const isAuthenticated = await fetch(`https://github.com/${githubUser}/`)
   .then(async(resposta)=> {
     if(resposta.status === 404){
@@ -175,7 +177,6 @@ export async function getServerSideProps(context) {
 
 
   if(!isAuthenticated) {
-    const LoginContext = React.createContext('não');
     return {
       redirect: {
         destination: '/login',
@@ -183,6 +184,9 @@ export async function getServerSideProps(context) {
       }
     }
   }
+
+
+
   
   return {
     props: {
