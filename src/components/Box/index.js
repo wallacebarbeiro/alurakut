@@ -62,6 +62,47 @@ const Box = styled.div`
       padding-right: 10px;
       margin-bottom: 20px;
   }
+  .btAcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    margin-bottom: 20px;
+  }
+  .scrapsBox li{
+    background-color: rgb(252, 255, 164);
+    border-radius: 8px;
+    margin:10px 0px;
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    gap:10px;
+    & img {
+      max-width: 100px;
+      margin: 10px;
+      height: 100%;
+      border-radius:50%;
+    }
+    & div {
+      display:flex;
+      padding:10px;
+      flex-direction: column;
+      align-self: flex-start;
+      & span:nth-child(1) {
+        margin-top: 10px;
+        font-size:14px;
+        &  i {
+          font-size: 12px;
+          font-style:normal
+        }
+      }
+      & span:nth-child(2) {
+        color: #444;
+        letter-spacing: 1px;
+        margin-top:10px;
+        font-size:12px;
+      }
+    }    
+  }
 `;
 
 
